@@ -8,6 +8,13 @@ contract MagicSquare {
   SquareLib.MagicSquare storedSquare;
   string storedGreeting;
 
+  event Greeting(string greeting);
+
+  constructor() public {
+    storedGreeting = "ready to generate a magic square!";
+    emit Greeting(storedGreeting);
+  }
+
   function generateMagicSquare(uint n)
     public
   {
@@ -18,6 +25,7 @@ contract MagicSquare {
     uint256 i;
 
     greeting = "let us construct a magic square:";
+    emit Greeting(greeting);
     square = SquareLib.initialize(n);
 
     x = 0;
@@ -28,6 +36,7 @@ contract MagicSquare {
 
     save(square);
     storedGreeting = "finally, a decentralized magic square service!";
+    emit Greeting(storedGreeting);
   }
 
   function save(SquareLib.MagicSquare memory square)
