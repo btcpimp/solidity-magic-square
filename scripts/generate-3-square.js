@@ -6,7 +6,7 @@ module.exports = async function(callback) {
 
   const instance = await MagicSquare.deployed();
 
-  await instance.generateMagicSquare(2, { from: accounts[0] });
+  await instance.generateMagicSquare(3, { from: accounts[0] });
 
   callback();
 }
