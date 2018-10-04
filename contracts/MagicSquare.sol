@@ -5,14 +5,19 @@ import "./SquareLib.sol";
 contract MagicSquare {
   using SquareLib for SquareLib.MagicSquare;
 
-  SquareLib.MagicSquare storedSquare;
   string storedGreeting;
+  uint[] testArray;
+  SquareLib.MagicSquare storedSquare;
 
   event Greeting(string greeting);
 
   constructor() public {
     storedGreeting = "ready to generate a magic square!";
     emit Greeting(storedGreeting);
+    testArray = new uint[](3);
+    testArray[0] = 5;
+    testArray[1] = 1;
+    testArray[2] = 2;
   }
 
   function generateMagicSquare(uint n)

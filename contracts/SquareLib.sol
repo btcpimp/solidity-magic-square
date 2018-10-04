@@ -2,8 +2,8 @@ pragma solidity ^0.4.18;
 
 library SquareLib {
   struct MagicSquare {
-    uint256[][] rows;
     uint256 n;
+    uint256[][] rows;
   }
 
   function initialize(uint256 n)
